@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shimmer_example_app/home_page.dart';
+import 'package:flutter_shimmer_example_app/home_theme_page.dart';
+import 'package:flutter_shimmer_example_app/themes/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.light,
+      home: const HomeThemePage(),
     );
   }
 }
-
-
